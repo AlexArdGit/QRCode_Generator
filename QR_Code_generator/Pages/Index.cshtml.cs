@@ -32,7 +32,7 @@ namespace QR_Code_generator.Pages
                 }
             } catch (NullReferenceException e) 
             {
-                Console.WriteLine("Please enter some text to generate your QR Code", e);
+                Console.WriteLine("Please enter some text or a link to generate your QR Code", e);
             }
             {
                 return RedirectToPage("Index");
