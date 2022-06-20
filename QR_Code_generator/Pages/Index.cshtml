@@ -1,0 +1,25 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">QR Code Generator</h1>
+    <p>Add any link or text and generate your own QR Code</a>.</p>
+</div>
+
+<hr/>
+
+<form method="post" asp-page="Index" class="text-center mt-100">
+     <p asp-validation-summary="All"></p>
+     <input name="QRData" class="form-control" type="text" placeholder="Enter Link or Text" autocomplete="off"/>
+     <input class="btn btn-primary" type="submit" value="Generate" style="margin-top: 30px;"/>
+</form>
+     
+
+<div class="text-center">
+@if ( @Model.QRDataGen != null) {
+    <img src="@Model.QRDataGen" style="margin-top:100px; width:200px; height:200px;" />
+}
+</div>
